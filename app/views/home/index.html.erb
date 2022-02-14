@@ -1,0 +1,18 @@
+<h1>Home</h1>
+
+<div style="margin-bottom: 10px;">
+  <label for="produto_1">Produto 1</label>
+  <input type="text" name="produto_1">
+  <%= link_to "buscar", nutri_buscar_produto_path %>
+</div>
+
+<div style="margin-bottom: 10px;">
+  <label for="produto_1">Produto 2</label>
+  <input type="text" name="produto_2">
+  <button>Pesquisar</button>
+</div>
+
+<% unless @produtos.blank? %>
+  <%= @produtos %>
+<% end %>
+
