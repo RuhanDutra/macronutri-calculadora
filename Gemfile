@@ -15,7 +15,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Utilidades
 
 # gem para webscraping
-gem 'mechanize'
+gem 'kimurai'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
