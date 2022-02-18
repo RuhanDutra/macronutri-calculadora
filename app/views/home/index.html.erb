@@ -3,18 +3,20 @@
 <%= form_with url: nutri_buscar_produto_path, method: :get do |form| %>
   <div style="margin-bottom: 10px;">
     <label for="produto_1">Produto 1</label>
-    <%= form.text_field :produto_1 %>
+    <%= form.text_field :produto %>
     <%= form.submit %>
   </div>
 <% end %>
 
-<div style="margin-bottom: 10px;">
-  <label for="produto_1">Produto 2</label>
-  <input type="text" name="produto_2">
-  <button>Pesquisar</button>
-</div>
+<%= form_with url: nutri_buscar_produto_path, method: :get do |form| %>
+  <div style="margin-bottom: 10px;">
+    <label for="produto_2">Produto 2</label>
+    <%= form.text_field :produto %>
+    <%= form.submit %>
+  </div>
+<% end %>
 
-<% unless @items.blank? %>
-  <%= @items %>
+<% unless @produtos.blank? %>
+  <%= @produtos %>
 <% end %>
 

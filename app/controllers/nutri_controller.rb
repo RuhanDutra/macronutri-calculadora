@@ -1,6 +1,6 @@
 class NutriController < ApplicationController
   def buscar_produto
-    termo = params[:produto_1]
+    termo = params[:produto]
     @items = []
 
     2.times do |pg|
@@ -13,7 +13,7 @@ class NutriController < ApplicationController
     else
       flash.now[:alert] = response[:error]
     end
-    redirect_to root_path(produtos: ['asdf', 'asdf'])
+    redirect_to root_path(produtos: @items)
   rescue StandardError => e
     flash.now[:alert] = "Error: #{e}"
   end
