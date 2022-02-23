@@ -7,6 +7,7 @@
     <%= form.submit %>
   </div>
 <% end %>
+<div class="produto_1_results"></div>
 
 <%= form_with url: nutri_buscar_produto_path, method: :get do |form| %>
   <div style="margin-bottom: 10px;">
@@ -15,6 +16,7 @@
     <%= form.submit %>
   </div>
 <% end %>
+<div class="produto_2_results"></div>
 
 <% unless @produtos.blank? %>
   <%= @produtos %>

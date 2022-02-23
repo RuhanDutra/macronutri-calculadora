@@ -1,0 +1,9 @@
+<div class="border">
+  <% if items.blank? %>
+    Nenhum Resultado
+  <% else %>
+    <% items.each do |item| %>
+      <span><%= item.name %></span>
+    <% end %>
+  <% end %>
+</div>

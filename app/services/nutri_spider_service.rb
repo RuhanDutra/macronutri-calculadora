@@ -1,4 +1,4 @@
-class NutriSpider < Kimurai::Base
+class NutriSpiderService < Kimurai::Base
   @name = "nutri_items_spider"
   @engine = :mechanize
   @start_urls = []
