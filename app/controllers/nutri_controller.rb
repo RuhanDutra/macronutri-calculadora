@@ -1,8 +1,16 @@
 class NutriController < ApplicationController
   def buscar_produto
-    termo = params[:produto]
-    @items = []
+    if params[:produto_1]
+      termo = params[:produto_1]
+      @product = "produto_1"
+    elsif params[:produto_2]
+      termo = params[:produto_2]
+      @product = "produto_2"
+    else
+      @product = ""
+    end
 
+    @items = []
     2.times do |pg|
       url = "https://www.myfitnesspal.com/pt/food/search?page=#{pg+1}&search=#{termo}"
       @items << NutriSpiderService.parse!(:parse, url: url)
@@ -13,6 +21,7 @@ class NutriController < ApplicationController
     else
       p response[:error]
     end
+
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js

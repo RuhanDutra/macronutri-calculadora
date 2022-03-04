@@ -3,7 +3,7 @@
 <%= form_with url: nutri_buscar_produto_path, method: :get do |form| %>
   <div style="margin-bottom: 10px;">
     <label for="produto_1">Produto 1</label>
-    <%= form.text_field :produto %>
+    <%= form.text_field :produto_1 %>
     <%= form.submit %>
   </div>
 <% end %>
@@ -12,7 +12,7 @@
 <%= form_with url: nutri_buscar_produto_path, method: :get do |form| %>
   <div style="margin-bottom: 10px;">
     <label for="produto_2">Produto 2</label>
-    <%= form.text_field :produto %>
+    <%= form.text_field :produto_2%>
     <%= form.submit %>
   </div>
 <% end %>
