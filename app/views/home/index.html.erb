@@ -1,24 +1,30 @@
 <h1>Home</h1>
 
-<%= form_with url: nutri_buscar_produto_path, method: :get do |form| %>
+<%= form_with url: nutri_buscar_produto_path, method: :get, local: false do |form| %>
   <div style="margin-bottom: 10px;">
     <label for="produto_1">Produto 1</label>
-    <%= form.text_field :produto_1 %>
-    <%= form.submit %>
+    <%= form.text_field :produto_1, required: true %>
+    <%= form.submit "buscar" %>
   </div>
 <% end %>
-<div class="produto_1_results"></div>
+<div id="produto_1_results"></div>
 
-<%= form_with url: nutri_buscar_produto_path, method: :get do |form| %>
+<%= form_with url: nutri_buscar_produto_path, method: :get, local: false do |form| %>
   <div style="margin-bottom: 10px;">
     <label for="produto_2">Produto 2</label>
-    <%= form.text_field :produto_2%>
-    <%= form.submit %>
+    <%= form.text_field :produto_2, required: true %>
+    <%= form.submit "buscar" %>
   </div>
 <% end %>
-<div class="produto_2_results"></div>
+<div id="produto_2_results"></div>
 
 <% unless @produtos.blank? %>
   <%= @produtos %>
 <% end %>
 
+<script type="text/javascript">
+  $(function() {
+    sessionStorage.removeItem("produto_1");
+    sessionStorage.removeItem('produto_2');
+  });
+</script>

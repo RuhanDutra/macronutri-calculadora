@@ -1,1 +1,11 @@
-$("##{@product}_results").html('<%= j render "/nutri/items_list", items: @items %>');
+$("#<%=@product%>_results").html('<%= j render "/nutri/items_list", items: @items, product: @product %>');
+
+$(function seleciona(){
+  $(".<%= @product %>").click(function(){
+    sessionStorage.setItem("<%= @product %>", $(this).attr('id'));
+    if(sessionStorage.getItem("produto_1") && sessionStorage.getItem("produto_2")){
+      alert("Tudo certo!");
+    };
+  });
+});
+

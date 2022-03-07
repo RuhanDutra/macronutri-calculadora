@@ -3,7 +3,15 @@
     Nenhum Resultado
   <% else %>
     <% items.each do |item| %>
-      <span><%= item.name %></span>
+      <div class="<%= @product %>" id="<%= item.id %>" style="margin-bottom: 10px">
+        <span>Nome: <%= item.name %></span> |
+        <span>Descrição: <%= item.description %></span>
+        <button>detalhes</button>
+        <br><strong>Resumo:</strong><br>
+        <span>Carbo: <%= item.nutritional_content.carbohydrates %></span> |
+        <span>Gordura: <%= item.nutritional_content.fat %></span> |
+        <span>Proteina: <%= item.nutritional_content.protein %></span>
+      </div>
     <% end %>
   <% end %>
 </div>

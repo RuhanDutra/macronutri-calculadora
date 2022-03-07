@@ -13,8 +13,9 @@ class NutriController < ApplicationController
     @items = []
     2.times do |pg|
       url = "https://www.myfitnesspal.com/pt/food/search?page=#{pg+1}&search=#{termo}"
-      @items << NutriSpiderService.parse!(:parse, url: url)
+      @items += NutriSpiderService.parse!(:parse, url: url)
     end
+
 
     if response[:status] == :completed && response[:error].nil?
       p "Successfully scraped url"
